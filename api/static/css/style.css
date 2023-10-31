@@ -149,3 +149,12 @@ select:focus {
 .task-table .complete {
     background-color: #b2e2f2;
 }
+
+
+.task-table .remove:hover {
+    background-color: #fcb7af; 
+}
+
+.task-table .complete:hover {
+    background-color: #c5c6c8;
+}
