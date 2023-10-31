@@ -4,7 +4,7 @@ Projeto desenvolvido para o módulo II do Match! IBM + Mastertech.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/900x500?text=App+Screenshot+Here)
+<img src="/gerenciador.JPG">
 
 ## Tecnologias utilizadas
 
