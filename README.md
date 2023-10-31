@@ -24,7 +24,7 @@ Projeto desenvolvido para o módulo II do Match! IBM + Mastertech.
 
 - [Documentação Python](https://docs.python.org/3/)
 - [Documentação Flask](https://flask.palletsprojects.com/en/3.0.x/)
-- [Documentação Versel](https://vercel.com/docs)
+- [Documentação Vercel](https://vercel.com/docs)
 
 ## 🔎 Referências 
 [IBM SkillsBuild](https://sb-auth.skillsbuild.org)
