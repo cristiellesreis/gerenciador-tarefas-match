@@ -10,6 +10,26 @@ body {
     font-weight: 300;
     color: #696767;
 }
+
+input[type=text],
+input[type=date],
+select {
+    border: 2px solid #c5c6c8;
+    border-radius: 5px;
+    height: 3vw;
+    width: 12vw;    
+    padding: 5px;
+    color: #696767;
+    background-color: #fdf9c4;
+}
+
+
+input[type=text],
+input[type=date],
+select:focus {
+    outline: none;
+}
+
 .header {
     height: 5vw;
     text-align: center;
@@ -76,5 +96,56 @@ body {
     border: 1px solid #c0bbbb;
     height: 4vw;
     width: 12vw;
+    background-color: #b2e2f2;
+}
+
+#task-table button {
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.table-container {
+    width: 80vw;
+}
+
+.task-table {
+    border-collapse: collapse;
+    min-width: 100%;
+    background-color: #fdf9c4;
+}
+
+.task-table thead {
+    background-color: #ffda9e;
+}
+
+.task-table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #fff;
+}
+
+.task-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #fff; 
+}
+
+.task-table td button {
+    padding: 5px 10px;
+    background-color: #fabfb7; 
+    border: none;
+    cursor: pointer;
+}
+
+.task-table .remove {
+    background-color: #fabfb7; 
+}
+
+.task-table .complete {
     background-color: #b2e2f2;
 }
