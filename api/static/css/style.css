@@ -1,152 +1,80 @@
-body {
-    font-family: Segoe UI;
-    background-color: #352350;
+* {
     margin: 0;
     padding: 0;
-    align-items: center;
-    height: 100vh;
-}
-
-form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="date"],
-select {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 20px 0;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-select {
-    width: 100%;
 }
 
 body {
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #ffffff;
+    font-family: sans-serif;
+    background-color: #fdf9c4;
+    font-weight: 300;
+    color: #696767;
 }
-
-/* Estilização da tabela de lista de tarefas */
-#task-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-#task-table th, #task-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-#task-table th {
-    background-color: #f4f4f4;
-}
-
-#task-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Estilização do formulario para adicionar tarefa */
-#task-form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+.header {
+    height: 5vw;
     text-align: center;
-    margin-bottom: 20px;
+    width: 100%;
+    background-color: #ffda9e;
 }
 
-#task-form input[type="text"],
-#task-form input[type="date"],
-#task-form select {
-    width: calc(100% - 20px);
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-#task-form input[type="submit"] {
-    width: calc(100% - 20px);
-    background-color: #794590;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-/* Estilização do botao adicionar tarefa */
-#task-form input[type="submit"]:hover {
-    background-color: #CCA6D5;
-}
-
-/* Estilização dos botoes da lista de tarefas */
-#task-table button {
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    margin-right: 5px;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-#task-table button.remove {
-    background-color: #ff3333;
-    color: white;
-}
-
-#task-table button.remove:hover {
-    background-color: #cc0000;
-}
-
-#task-table button.complete {
-    background-color: #4caf50;
-    color: white;
-}
-
-#task-table button.complete:hover {
-    background-color: #45a049;
-}
-
-
-.form {
+.container {
     display: flex;
-    flex-direction:row;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > form {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.todo-container {
+    display: inline-flex;
+    flex-direction: column;
+    border: 1px solid #c0bbbb;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 6px 10px #ffda9e80;
+    width: 48vw;
+}
+.todo-inputs-container {
+    display: inline-flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items:center;
+    margin: 2vw;
+}
+
+.todo-inputs {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.todo-btn-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-add-btn {
+    border-radius: 5px;
+    border: 1px solid #c0bbbb;
+    font-size: medium;
+    height: 4vw;
+    width: 12vw;
+    background-color: #b2e2f2;
+}
+
+.todo-add-btn:hover {
+    border-radius: 5px;
+    border: 1px solid #c0bbbb;
+    height: 4vw;
+    width: 12vw;
+    background-color:  #c5c6c8;
+}
+
+.todo-add-btn:focus {
+    border-radius: 5px;
+    border: 1px solid #c0bbbb;
+    height: 4vw;
+    width: 12vw;
+    background-color: #b2e2f2;
 }

@@ -1,76 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas Match!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <h1>Gerenciador de Tarefas</h1>
-
-    <section>
-        <form id="task-form" method="post" action="/adicionar">
-            <div class="form"> 
-                <div>
-                    <label for="descricao">Tarefa:</label>
-                    <input type="text" id="descricao" name="descricao" required>
-                </div>
-                <div>
-                    <label for="data">Prazo:</label>
-                    <input type="date" id="data" name="data" required>
-                </div>
-                <div>
-                    <label for="prioridade">Prioridade:</label>
-                    <select id="prioridade" name="prioridade" required>
-                        <option value="Baixa">Baixa</option>
-                        <option value="Media">Média</option>
-                        <option value="Alta">Alta</option>
-                    </select>
-                </div>
-                
-            </div>
-    
-            <input type="submit" value="Adicionar Tarefa">
-        </form>
-
-    </section>
-
-    <section>
-        <h2>Lista de Tarefas:</h2>
-        <table id="task-table">
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Prazo</th>
-                    <th>Prioridade</th>
-                    <th>Concluida</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for tarefa in tarefas %}
-                <tr>
-                    <td>{{ tarefa.descricao }}</td>
-                    <td>{{ tarefa.data }}</td>
-                    <td>{{ tarefa.prioridade }}</td>
-                    <td>
-                        {% if tarefa.concluida %}
-                            Sim
-                        {% else %}
-                            Não
-                        {% endif %}
-                    </td>
-                    <td>
-                        <button onclick="excluirTarefa({{ tarefa.id }})" class="remove">Remover</button>
-                        <button onclick="concluirTarefa({{ tarefa.id }})" class="complete">Concluir</button>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </section>
-
     <script>
 
         function excluirTarefa(id) {
@@ -78,27 +13,96 @@
             fetch(`/excluir/${id}`, {
                 method: 'DELETE'
             })
-            .then(response => {
-                if (response.ok) {
-                    window.location.reload();
-                }
-            })
-            .catch(error => console.error('Erro ao excluir tarefa:', error));
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    }
+                })
+                .catch(error => console.error('Erro ao excluir tarefa:', error));
         }
 
         function concluirTarefa(id) {
             fetch(`/concluir/${id}`, {
                 method: 'PUT'
             })
-            .then(response => {
-                if (response.ok) {
-                    window.location.reload();
-                }
-            })
-            .catch(error => console.error('Erro ao concluir tarefa:', error));
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    }
+                })
+                .catch(error => console.error('Erro ao concluir tarefa:', error));
         }
 
     </script>
+</head>
 
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Gerenciador de Tarefas</h1>
+        </header>
+
+        <form method="post" action="/adicionar">
+            <div class="todo-container">
+                <div class="todo-inputs-container">
+                    <div class="todo-inputs">
+                        <label for="descricao">Tarefa:</label>
+                        <input type="text" name="descricao" required>
+                    </div>
+                    <div class="todo-inputs">
+                        <label for="data">Prazo:</label>
+                        <input type="date" name="data" required>
+                    </div>
+                    <div class="todo-inputs">
+                        <label for="prioridade">Prioridade:</label>
+                        <select name="prioridade" required>
+                            <option value="Baixa">Baixa</option>
+                            <option value="Media">Média</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="todo-btn-container">
+                    <input class="todo-add-btn" type="submit" value="Adicionar Tarefa">
+                </div>
+            </div>
+        </form>
+
+        <section>
+            <h2>Lista de Tarefas:</h2>
+            <table id="task-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Prazo</th>
+                        <th>Prioridade</th>
+                        <th>Concluida</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tarefa in tarefas %}
+                    <tr>
+                        <td>{{ tarefa.descricao }}</td>
+                        <td>{{ tarefa.data }}</td>
+                        <td>{{ tarefa.prioridade }}</td>
+                        <td>
+                            {% if tarefa.concluida %}
+                            Sim
+                            {% else %}
+                            Não
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button onclick="excluirTarefa({{ tarefa.id }})" class="remove">Remover</button>
+                            <button onclick="concluirTarefa({{ tarefa.id }})" class="complete">Concluir</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        </container>
 </body>
+
 </html>
