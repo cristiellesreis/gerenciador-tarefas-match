@@ -84,10 +84,8 @@
         fetch(`/excluir/${id}`, {
             method: 'DELETE'
         })
-            .then(response => {f
-                if (response.ok) {
+        .then(response => {
                     window.location.reload();
-                }
             })
             .catch(error => console.error('Erro ao excluir tarefa:', error));
     }
@@ -97,9 +95,7 @@
             method: 'PUT'
         })
             .then(response => {
-                if (response.ok) {
-                    window.location.reload();
-                }
+                window.location.reload();
             })
             .catch(error => console.error('Erro ao concluir tarefa:', error));
     }
